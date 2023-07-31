@@ -9,14 +9,17 @@ import com.enough.dto.ProductVO;
 
 @Mapper
 public interface IEnoughDao {
-	// 상품목록
+	// 상품목록( 상품 리스트 )
 	List<ProductVO> getproductList();
-	// 추가 폼
+	// 추가 폼(브랜드 리스트 가져감)
 	List<BrandVO> getBrandList();
 	// 추가
 	void insertpr(ProductVO pvo);
 	// 수정
 	void updatepr(int quantity, int pseq);
 	// 삭제
+	
+	// 브랜드 추가 
+	// 브랜드 삭제 
 	
 }

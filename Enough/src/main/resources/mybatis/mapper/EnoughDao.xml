@@ -18,7 +18,8 @@
 		values (productList_seq.nextval, #{name}, #{brand}, #{quantity}, #{price})
 	</insert>
 	
-	<update id="updatepr" parameterType="com.enough.dto.ProductVO">
-		update productList set quantity = #{quantity} where pseq = #{pseq} 
+	<update id="updatepr"  parameterType="com.enough.dto.ProductVO">
+		update productList set quantity = #{param1} where pseq = #{param2} 
 	</update>
+	
 </mapper>
