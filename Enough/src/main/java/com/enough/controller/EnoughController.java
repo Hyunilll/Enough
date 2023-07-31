@@ -76,12 +76,18 @@ public class EnoughController {
 	 public String updatepr( @RequestParam("pseq") int pseq,
 			 				 @RequestParam("quantity") int quantity
 			 ) {
-		 
+		 System.out.println("quantity:::"+quantity+"pseq:::"+pseq);
 		 es.updatepr( quantity , pseq );		 
 		 return "redirect:/";
 	 }
 	 
+	 // -------------------------- 상품 삭제 --------------------
 	 
+	 // ------------------------ 브랜드 추가 ---------------
+	 
+	 // ------------------------ 브랜드 삭제 ---------------
+	 
+	 // 배송완료 리스트 
 	 
 	 
 	 

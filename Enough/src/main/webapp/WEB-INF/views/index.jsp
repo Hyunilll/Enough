@@ -10,6 +10,7 @@
 <script src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
 	function go_update(pseq){
+		console.log(pseq+"::::pseq,"+$("#quantity_"+pseq+"").val());
 		
 		document.frm.action = "updatepr?pseq=" + pseq;
 	    document.frm.submit();
@@ -69,7 +70,7 @@
 			 				<input type="button" id="test2_${productVO.pseq}" value="수정" 
 			 						onClick="dd('${productVO.pseq}')">
 			 				<input type="button" id="test_${productVO.pseq}" value="수정완료" 
-			 						onClick="go_update('${prouctVO.pseq}')" style="display:none;">
+			 						onClick="go_update('${productVO.pseq}')" style="display:none;">
 			 			</td>
 			 			<td>
 			 				<input type="button" id="" value="삭제" 
