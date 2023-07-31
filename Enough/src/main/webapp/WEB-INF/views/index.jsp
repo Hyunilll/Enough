@@ -8,6 +8,16 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script type="text/javascript">
+	function go_update(com){
+		if(document.frm.quantity.value=""){
+			alert("수량을 입력하세요");
+			return;
+		}
+		document.frm.action = "updatepr";
+		document.frm.submit();
+	}
+</script>
 </head>
 <body>
 
@@ -38,12 +48,16 @@
 			   			<td>${productVO.pseq}</td>
 			   			<td>${productVO.name}</td>
 			  			<td>${productVO.brand}</td>
-						<td>${productVO.quantity}</td>
+			  			<td>
+			  				<input type="text" id="quantity" value="${productVO.quantity}" size="1" 
+			  					style="background:lightgray; text-align:cetner;" disabled>
+			  			</td>
 			   			<td>${productVO.price}</td>
 			    		<td>${productVO.quantity * productVO.price}</td>
 			   			<td><fmt:formatDate value="${productVO.indate}"/></td>
-			 			<td><input type="button" id="test2" value="수정" onclick="dd()">
-			 			<input type="button" id="test" value="수정완료" onClick="" style="display:none;">
+			 			<td>
+			 				<input type="button" id="test2" value="수정" onclick="dd()">
+			 				<input type="button" id="test" value="수정완료" onClick="go_update(${productVO.pseq})" style="display:none;">
 			 			</td>
 			    	</tr>
 			  	</c:forEach> 
