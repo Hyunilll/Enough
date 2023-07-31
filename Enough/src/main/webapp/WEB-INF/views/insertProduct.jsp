@@ -42,9 +42,9 @@ function go_insertpr(){
 				<tr>
 					<th>브랜드명 :</th> 
 					<td>	
-						<select name="brand" style= "width:160px;">
-							<c:forEach items="${BrandList}" var="BrandVO">
-							    <option value="">${BrandVO.title}</option>
+						<select name="brand" id="brand" style= "width:160px;">
+							<c:forEach items="${brandList}" var="BrandVO">
+							    <option  value="${BrandVO.title}">${BrandVO.title}</option>
 							</c:forEach>
 						</select>
 					</td>

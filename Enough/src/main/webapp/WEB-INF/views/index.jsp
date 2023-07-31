@@ -9,14 +9,19 @@
 <title>Insert title here</title>
 <script src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
-	function go_update(com){
-		if(document.frm.quantity.value=""){
-			alert("수량을 입력하세요");
-			return;
-		}
-		document.frm.action = "updatepr";
-		document.frm.submit();
+	function go_update(pseq){
+		
+		document.frm.action = "updatepr?pseq=" + pseq;
+	    document.frm.submit();
 	}
+	function dd(pseq){
+		alert("옴");
+		$("#test_" + pseq).show();
+		$("#test2_" + pseq).hide();
+		
+		$("#quantity_" + pseq).prop("disabled",false);
+	}
+
 </script>
 </head>
 <body>
@@ -49,15 +54,18 @@
 			   			<td>${productVO.name}</td>
 			  			<td>${productVO.brand}</td>
 			  			<td>
-			  				<input type="text" id="quantity" value="${productVO.quantity}" size="1" 
-			  					style="background:lightgray; text-align:cetner;" disabled>
+			  				<input type="text" id="quantity_${productVO.pseq}" name ="quantity" 
+			  					value="${productVO.quantity}" size="1" 
+			  					style="background:lightgray; margin: 0 auto;" disabled>
 			  			</td>
 			   			<td>${productVO.price}</td>
 			    		<td>${productVO.quantity * productVO.price}</td>
 			   			<td><fmt:formatDate value="${productVO.indate}"/></td>
 			 			<td>
-			 				<input type="button" id="test2" value="수정" onclick="dd()">
-			 				<input type="button" id="test" value="수정완료" onClick="go_update(${productVO.pseq})" style="display:none;">
+			 				<input type="button" id="test2_${productVO.pseq}" value="수정" 
+			 						onClick="dd('${productVO.pseq}')">
+			 				<input type="button" id="test_${productVO.pseq }" value="수정완료" 
+			 						onClick="go_update('${prouctVO.pseq}')" style="display:none;">
 			 			</td>
 			    	</tr>
 			  	</c:forEach> 
@@ -66,13 +74,13 @@
 	</article>
 
 </div>
-<script type="text/javascript">
-function dd(){
-	alert("옴");
-	$("#test").show();
-	$("#test2").hide();
-	$("#quantity").attr("disabled",false);
-}
-</script>
+
+<!--
+### .prop()은 해당 요소의 프로퍼티(property)를 조작하는데 사용됩니다. 	
+	불리언 값을 반환하며, 보통 체크박스 등의 상태를 다룰 때 주로 사용됩니다.
+### .attr()은 해당 요소의 속성(attribute)를 조작하는데 사용됩니다. 
+	HTML 속성의 값을 반환하며, 일반적인 HTML 속성을 다룰 때 사용됩니다. (예: value, src, href 등)
+-->
+
 </body>
 </html>

@@ -4,14 +4,18 @@ import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.enough.dto.BrandVO;
 import com.enough.dto.ProductVO;
 import com.enough.service.EnoughService;
 
@@ -33,9 +37,24 @@ public class EnoughController {
 	}
 	// -----------------------추가 창으로 이동 --------------
 	@RequestMapping("/insertProduct")
-	public String insertProduct() {
-		return "insertProduct";
+	public ModelAndView insertProduct(HttpServletRequest request
+			) { 
+		ModelAndView mav = new ModelAndView();
+		HashMap<String,Object> result = es.getBrandList( request );
+		mav.addObject("brandList",(List<BrandVO>)result.get("brandList") );
+		mav.setViewName("insertProduct");
+		return mav;
 	}
+	
+	/*
+	@RequestMapping("/insertProduct")
+	public String insertProduct(BrandVO bvo,
+			Model model
+			) { 
+		model.addAttribute("BrandList",(List<bvo>.getTitle());
+		return "/insertProduct";
+	}
+	*/
 	
 	// ---------------------------상품 추가 ------------------
 	 @RequestMapping(value = "/insertpr", method = RequestMethod.POST)
@@ -50,14 +69,42 @@ public class EnoughController {
 		pvo.setBrand(brand);
 		pvo.setQuantity(quantity);
 		pvo.setPrice(price);
-		// System.out.println(price); 
-		// System.out.println(pvo.getPrice() + ": price"); 
-		// System.out.println(pvo.getName() + ": name");
-		// System.out.println(pvo.getBrand() + ": brand");
+
 		es.insertpr(pvo);
 		return"redirect:/";
 	}
 
+	 // --------------------------수량 수정 -------------------------
+	 @RequestMapping (value = "/updatepr", method = RequestMethod.POST)
+	 public String updatepr( @RequestParam("pseq") int pseq,
+			 				 @RequestParam("quantity") int quantity
+			 ) {
+		 
+		 es.updatepr( quantity , pseq );		 
+		 return "redirect:/";
+	 }
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 	
 		
 }
