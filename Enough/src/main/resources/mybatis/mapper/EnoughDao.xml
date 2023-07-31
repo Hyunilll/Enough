@@ -10,9 +10,8 @@
 	</select>
 	
 	<insert id="insertpr" parameterType="com.enough.dto.ProductVO">
-		INSERT INTO productList( pseq, name, brand, quantity, price)
-		VALUES ( productList_seq.naexVal, #{name}, #{brand}, #{quantity}, #{price})
-		
+	insert into productList (pseq, name, brand, quantity,price)
+		values (productList_seq.nextval, #{name}, #{brand}, #{quantity}, #{price})
 	</insert>
 	
 </mapper>

@@ -46,16 +46,14 @@ public class EnoughController {
 							@RequestParam("brand") String brand
 				) {
 		ProductVO pvo = new ProductVO();
-		pvo.setPrice(price);
-		pvo.setQuantity(quantity);
 		pvo.setName(name);
 		pvo.setBrand(brand);
-		System.out.println(price); 
-		System.out.println(pvo.getPrice() + ": price"); 
-		System.out.println(quantity); 
-		System.out.println(name); 
-		System.out.println(pvo.getName() + ": name");
-		System.out.println(pvo.getBrand() + ": brand");
+		pvo.setQuantity(quantity);
+		pvo.setPrice(price);
+		// System.out.println(price); 
+		// System.out.println(pvo.getPrice() + ": price"); 
+		// System.out.println(pvo.getName() + ": name");
+		// System.out.println(pvo.getBrand() + ": brand");
 		es.insertpr(pvo);
 		return"redirect:/";
 	}

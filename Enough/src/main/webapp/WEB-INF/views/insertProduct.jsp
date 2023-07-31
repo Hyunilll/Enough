@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,16 +8,16 @@
 <script type="text/javascript">
 function go_insertpr(){
 	if( document.insertpr.name.value==""){ 
-		alert('ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä');
+		alert('ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”');
 		document.insertpr.name.focus();	
 	}else if (document.insertpr.brand.value == "") {
-		alert('ºê·£µå¸¦ ÀÔ·ÂÇÏ¼¼¿ä.'); 	
+		alert('ë¸Œëœë“œë¥¼ ì…ë ¥í•˜ì„¸ìš”.'); 	
 		document.insertpr.brand.focus();	
 	}else if (document.insertpr.quantity.value == "") {
-		alert('¼ö·® ÀÔ·ÂÇÏ¼¼¿ä.'); 	
+		alert('ìˆ˜ëŸ‰ ì…ë ¥í•˜ì„¸ìš”.'); 	
 		document.inserpr.quantity.focus();	
 	}else if (document.insertpr.price.value == "") {
-		alert('°¡°İÀ» ÀÔ·ÂÇÏ¼¼¿ä.'); 	
+		alert('ê°€ê²©ì„ ì…ë ¥í•˜ì„¸ìš”.'); 	
 		document.insertpr.price.focus();	
 	}else{
 	document.insertpr.action = "insertpr";
@@ -34,34 +34,34 @@ function go_insertpr(){
 		<form name="insertpr" action="insertpr" method="post">	
 			<table style= "margin: 0 auto;">
 				<tr>
-					<th>»óÇ°¸í :</th> 
+					<th>ìƒí’ˆëª… :</th> 
 					<td><input type="text" name= "name" style= "width:150px;"></td>
 				</tr>
 				<tr>
-					<th>ºê·£µå¸í :</th> 
+					<th>ë¸Œëœë“œëª… :</th> 
 					<td>	
 						<select name="brand" style= "width:160px;">
-						    <option value="">ºê·£µå</option>
-						    <option value="º£¸£°¡¸ø">º£¸£°¡¸ø</option>
-						    <option value="ÇÏ¿ì½º">ÇÏ¿ì½º</option>
-						    <option value="Çïº£Æ¼Ä«">Çïº£Æ¼Ä«</option>
+						    <option value="">ë¸Œëœë“œ</option>
+						    <option value="ë² ë¥´ê°€ëª»">ë² ë¥´ê°€ëª»</option>
+						    <option value="í•˜ìš°ìŠ¤">í•˜ìš°ìŠ¤</option>
+						    <option value="í—¬ë² í‹°ì¹´">í—¬ë² í‹°ì¹´</option>
 						</select>
 					</td>
 					
 				</tr>
 				<tr>
-					<th>¼ö·® :</th> 
+					<th>ìˆ˜ëŸ‰ :</th> 
 					<td><input type="text" name="quantity" style= "width:150px;"></td>	
 				</tr>
 				<tr>
-					<th>°¡°İ( ,¾²Áö¸¶) :</th> 
+					<th>ê°€ê²©( ,ì“°ì§€ë§ˆ) :</th> 
 					<td><input type="text" name="price" style= "width:150px;"></td>
 				</tr>
 			</table>
 		</form>
 		<div>
-			<input type="button" value="»óÇ°µî·Ï" onclick="go_insertpr()">
-			<input type="button" value="¸ñ·ÏÀ¸·Î" onclick="location.href='/'">
+			<input type="button" value="ìƒí’ˆë“±ë¡" onclick="go_insertpr()">
+			<input type="button" value="ëª©ë¡ìœ¼ë¡œ" onclick="location.href='/'">
 		</div> 
 	</article>
 </div>

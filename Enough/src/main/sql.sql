@@ -6,7 +6,6 @@ create table productList(
 	quantity number(5),
 	indate date default sysdate,
 	price number(6),
-	total number(10),
 	primary key (pseq)
 );
 drop table productList;
