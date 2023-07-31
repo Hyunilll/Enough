@@ -1,5 +1,7 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,10 +43,9 @@ function go_insertpr(){
 					<th>브랜드명 :</th> 
 					<td>	
 						<select name="brand" style= "width:160px;">
-						    <option value="">브랜드</option>
-						    <option value="베르가못">베르가못</option>
-						    <option value="하우스">하우스</option>
-						    <option value="헬베티카">헬베티카</option>
+							<c:forEach items="${BrandList}" var="BrandVO">
+							    <option value="">${BrandVO.title}</option>
+							</c:forEach>
 						</select>
 					</td>
 					
