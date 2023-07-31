@@ -15,7 +15,6 @@
 	    document.frm.submit();
 	}
 	function dd(pseq){
-		alert("옴");
 		$("#test_" + pseq).show();
 		$("#test2_" + pseq).hide();
 		
@@ -33,20 +32,25 @@
 			<table>
 				<tr>
 					<td width="1000" align="right">
-					<input class="btn" type="button" name="btn_write" value="상품 등록" 
-							onClick="location.href='insertProduct'"></td>
+						<input class="btn" type="button" name="btn_write" value="상품 등록" 
+							onClick="location.href='insertProduct'">
+						<!-- <input type="text" name="title"> -->
+						<input class="btn" type="button" name="btn_write" value="브랜드 등록" 
+							onClick="insertbr">
+					</td>
 				</tr>
 			</table >
 			<table border="1"  cellspacing="0"   style="text-align:center" width="1000">
 				<tr>
-					<th width="70">번호</th>
+					<th width="60">번호</th>
 					<th width="230">상품명</th>
-					<th  width="200">브랜드</th>
-					<th  width="100">수량 </th>
+					<th  width="170">브랜드</th>
+					<th  width="80">수량 </th>
 					<th  width="100">단가</th>
 					<th  width="100">총가격</th>
 					<th  width="100">입력날짜</th>
 					<th  width="100">수정</th>
+					<th  width="60">삭제</th>
 				</tr>
 		 	 	<c:forEach items="${productList}" var="productVO">
 			  		<tr height="23" align="center">
@@ -64,8 +68,12 @@
 			 			<td>
 			 				<input type="button" id="test2_${productVO.pseq}" value="수정" 
 			 						onClick="dd('${productVO.pseq}')">
-			 				<input type="button" id="test_${productVO.pseq }" value="수정완료" 
+			 				<input type="button" id="test_${productVO.pseq}" value="수정완료" 
 			 						onClick="go_update('${prouctVO.pseq}')" style="display:none;">
+			 			</td>
+			 			<td>
+			 				<input type="button" id="" value="삭제" 
+			 					onClick="deletepr" />
 			 			</td>
 			    	</tr>
 			  	</c:forEach> 
