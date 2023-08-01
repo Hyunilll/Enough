@@ -83,31 +83,28 @@ public class EnoughController {
 	 
 	 // -------------------------- 상품 삭제 --------------------
 	 
-	 // ------------------------ 브랜드 추가 ---------------
+	 // --------------------- 브랜드 추가 창으로 이동 --------------------
+	 @RequestMapping ("/insertBrand")
+	 public ModelAndView insertBrand (HttpServletRequest request) {
+		 ModelAndView mav = new ModelAndView();
+		 HashMap<String,Object> result = es.getBrandList( request );
+		 mav.addObject("brandList",(List<BrandVO>)result.get("brandList") );
+		 mav.setViewName("insertBrand");
+		 return mav;
+	 }
 	 
+	 // ------------------------ 브랜드 추가 ---------------
+	 @RequestMapping (value = "/insertbr", method = RequestMethod.POST)
+	 public String insertbr ( @RequestParam("title") String title) {
+		 
+		 BrandVO bvo= new BrandVO();
+		 bvo.setTitle(title);
+		 
+		 es.insertbr(bvo);
+		 return "redirect:/insertBrand";
+	 }
 	 // ------------------------ 브랜드 삭제 ---------------
 	 
 	 // 배송완료 리스트 
 	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	
-		
 }
