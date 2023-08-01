@@ -10,7 +10,7 @@
 <script src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
 	function go_update(pseq){
-		console.log(pseq+"::::pseq,"+$("#quantity_"+pseq+"").val());
+		//console.log(pseq+"::::pseq,"+$("#quantity_"+pseq+"").val());
 		
 		document.frm.action = "updatepr?pseq=" + pseq;
 	    document.frm.submit();
@@ -37,7 +37,7 @@
 							onClick="location.href='insertProduct'">
 						<!-- <input type="text" name="title"> -->
 						<input class="btn" type="button" name="btn_write" value="브랜드 등록" 
-							onClick="insertbr">
+							onClick="location.href='insertBrand'">
 					</td>
 				</tr>
 			</table >

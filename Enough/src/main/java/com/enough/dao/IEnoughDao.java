@@ -19,7 +19,9 @@ public interface IEnoughDao {
 	void updatepr(int quantity, int pseq);
 	// 삭제
 	
+	
 	// 브랜드 추가 
+	void insertbr(BrandVO bvo);
 	// 브랜드 삭제 
 	
 }

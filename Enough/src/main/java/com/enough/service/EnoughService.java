@@ -40,4 +40,9 @@ public class EnoughService {
 		result.put("brandList", brandList);
 		return result;
 	}
+
+	public void insertbr(BrandVO bvo) {
+		edao.insertbr(bvo);
+		
+	}
 }
