@@ -16,6 +16,12 @@
 		document.insertbr.action = "insertbr";
 		document.insertbr.submit();
 	}
+	
+	function go_deletebr(){
+		// alert ("정말로 삭제 하시겠습니까?");
+		document.insertbr.action = "deletebr";
+		document.insertbr.submit();
+	}
 </script>
 </head>
 <body>
@@ -36,18 +42,19 @@
 		 			</td>
 		 		</tr>
 		 	</table>
-		 </form>
-		 <div>
-		 	<input type="button" name="" value="등록" onClick="go_insertbr()">
-		 	<input type="button" value="돌아가기"onClick="location.href='/'">
-		 </div>
 		 
-		 <div style="text-align:center;">
-			 <c:forEach items="${brandList}" var="BrandVO">
-				${BrandVO.title}&nbsp;&nbsp;
-			 </c:forEach>
-		 </div>		
-		 	
+			 <div>
+			 	
+			 	<input type="button" value="돌아가기"onClick="location.href='/'">
+			 </div>
+			
+			 <div style="text-align:center;">
+				 <c:forEach items="${brandList}" var="BrandVO">
+					<input type=button value="x" onClick="go_deletebr()">
+					${BrandVO.title}&nbsp;&nbsp;
+				 </c:forEach>
+			 </div>		
+		 </form>	
 	 </article>
  </div>
 </body>

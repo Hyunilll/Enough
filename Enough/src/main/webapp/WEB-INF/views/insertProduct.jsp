@@ -59,11 +59,12 @@ function go_insertpr(){
 					<td><input type="text" name="price" style= "width:150px;"></td>
 				</tr>
 			</table>
-		</form>
-		<div>
-			<input type="button" value="상품등록" onclick="go_insertpr()">
-			<input type="button" value="목록으로" onclick="location.href='/'">
-		</div> 
+		
+			<div>
+				<input type="button" value="상품등록" onclick="go_insertpr()">
+				<input type="button" value="목록으로" onclick="location.href='/'">
+			</div>
+		</form> 
 	</article>
 </div>
 </body>

@@ -21,6 +21,11 @@
 		
 		$("#quantity_" + pseq).prop("disabled",false);
 	}
+	function deletepr(){
+		// alert ("정말로 삭제 하시겠습니까?");
+		document.frm.action= "deletepr";
+		document.frm.submit();
+	}
 
 </script>
 </head>

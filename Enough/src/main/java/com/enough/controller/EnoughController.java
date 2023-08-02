@@ -32,6 +32,7 @@ public class EnoughController {
 		mav.setViewName("index");
 		return mav;
 	}
+	
 	// -----------------------추가 창으로 이동 --------------
 	@RequestMapping("/insertProduct")
 	public ModelAndView insertProduct(HttpServletRequest request
@@ -43,15 +44,6 @@ public class EnoughController {
 		return mav;
 	}
 	
-	/*
-	@RequestMapping("/insertProduct")
-	public String insertProduct(BrandVO bvo,
-			Model model
-			) { 
-		model.addAttribute("BrandList",(List<bvo>.getTitle());
-		return "/insertProduct";
-	}
-	*/
 	
 	// ---------------------------상품 추가 ------------------
 	 @RequestMapping(value = "/insertpr", method = RequestMethod.POST)
@@ -82,6 +74,12 @@ public class EnoughController {
 	 }
 	 
 	 // -------------------------- 상품 삭제 --------------------
+	
+	 @RequestMapping ("/deletepr")
+	 public String deletepr () {
+		 
+		 return "";
+	 }
 	 
 	 // --------------------- 브랜드 추가 창으로 이동 --------------------
 	 @RequestMapping ("/insertBrand")
@@ -105,6 +103,11 @@ public class EnoughController {
 	 }
 	 // ------------------------ 브랜드 삭제 ---------------
 	 
+	 @RequestMapping ("/deletebrr")
+	 public String deletebr () {
+		 
+		 return "";
+	 }
 	 // 배송완료 리스트 
 	 
 }
