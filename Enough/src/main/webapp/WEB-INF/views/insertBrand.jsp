@@ -12,6 +12,7 @@
 		if(document.insertbr.title.value==""){
 			alert('브랜드명을 입력하세요');
 			document.insertbr.title.focus();
+			return;
 		}
 		document.insertbr.action = "insertbr";
 		document.insertbr.submit();
@@ -30,21 +31,16 @@
 	<h1>브랜드 등록</h1>
 	<article>
 		 
-		 <form name = "insertbr" action="insertbr" method= "post"
-		 	style=" margin:0 auto;">
-		 	<table>
+		 <form name = "insertbr" action="insertbr" method= "post">
+		 	<table style= "margin: 0 auto;">
 		 		<tr>
 		 			<th>브랜드명</th>
 		 			<td><input type="text" name="title" style= "width:150px;" /></td>
-		 			<td>
-		 				<input type="button" name="" value="등록" 
-		 					onClick="go_insertbr()">
-		 			</td>
 		 		</tr>
 		 	</table>
 		 
 			 <div>
-			 	
+			 	<input type="button" name="" value="등록" onClick="go_insertbr()">
 			 	<input type="button" value="돌아가기"onClick="location.href='/'">
 			 </div>
 			
