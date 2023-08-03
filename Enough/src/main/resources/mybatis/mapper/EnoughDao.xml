@@ -22,9 +22,15 @@
 		update productList set quantity = #{param1} where pseq = #{param2} 
 	</update>
 
+	<delete id="deletepr" parameterType="com.enough.dto.ProductVO">
+		delete from productList where pseq=#{param1}
+	</delete>
 	
 	<insert id ="insertbr" parameterType="com.enough.dto.BrandVO">
 		insert into brandList (bseq, title) values (brandList_seq.nextval, #{title} )
 	</insert>	
 	
+	<delete id="deletebr" parameterType="com.enough.dto.BrandVO">
+		delete from brandList where bseq=#{param1}
+	</delete>
 </mapper>

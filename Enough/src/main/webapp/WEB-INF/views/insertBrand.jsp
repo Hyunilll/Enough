@@ -18,11 +18,14 @@
 		document.insertbr.submit();
 	}
 	
-	function go_deletebr(){
-		// alert ("정말로 삭제 하시겠습니까?");
-		document.insertbr.action = "deletebr";
-		document.insertbr.submit();
+	function go_deletebr(bseq){
+		var con = confirm("정말로 삭제 하시겠습니까?");
+		if (con) {
+			document.insertbr.action = "deletebr?bseq=" + bseq;
+			document.insertbr.submit();
+		}else return;
 	}
+	
 </script>
 </head>
 <body>
@@ -46,7 +49,7 @@
 			
 			 <div style="text-align:center;">
 				 <c:forEach items="${brandList}" var="BrandVO">
-					<input type=button value="x" onClick="go_deletebr()">
+					<input type=button value="x" onClick="go_deletebr('${BrandVO.bseq}')">
 					${BrandVO.title}&nbsp;&nbsp;
 				 </c:forEach>
 			 </div>		

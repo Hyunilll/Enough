@@ -33,6 +33,11 @@ public class EnoughService {
 	public void updatepr(int quantity, int pseq) {
 		edao.updatepr(quantity, pseq);
 	}
+	
+	public void deletepr(int pseq) {
+		edao.deletepr(pseq);
+		
+	}
 
 	public HashMap<String, Object> getBrandList(HttpServletRequest request) {
 		HashMap<String, Object> result = new HashMap<String, Object>();
@@ -44,5 +49,10 @@ public class EnoughService {
 	public void insertbr(BrandVO bvo) {
 		edao.insertbr(bvo);
 		
+	}
+
+
+	public void deletebr(int bseq) {
+		edao.deletebr(bseq);
 	}
 }
