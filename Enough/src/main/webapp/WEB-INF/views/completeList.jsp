@@ -41,6 +41,8 @@
 			<table>
 				<tr>
 					<td width="1000" align="right">
+						<input class="btn" type="button" name="btn_write" value="미송리스트로 이동" 
+							onClick="location.href='/'">
 						<input class="btn" type="button" name="btn_write" value="상품 등록" 
 							onClick="location.href='insertProduct'">
 						<!-- <input type="text" name="title"> -->
