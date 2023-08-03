@@ -10,8 +10,6 @@
 <script src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
 	function go_update(pseq){
-		//console.log(pseq+"::::pseq,"+$("#quantity_"+pseq+"").val());
-		
 		document.frm.action = "updatepr?pseq=" + pseq;
 	    document.frm.submit();
 	}
@@ -41,6 +39,8 @@
 			<table>
 				<tr>
 					<td width="1000" align="right">
+						<input class="btn" type="button" name="btn_write" value="미송리스트로 이동" 
+							onClick="location.href='/'">
 						<input class="btn" type="button" name="btn_write" value="상품 등록" 
 							onClick="location.href='insertProduct'">
 						<!-- <input type="text" name="title"> -->
@@ -67,7 +67,7 @@
 			   			<td>${productVO.name}</td>
 			  			<td>${productVO.brand}</td>
 			  			<td>
-			  				<input type="text" id="quantity_${productVO.pseq}" name ="quantity" 
+			  				<input type="text" id="quantity_${productVO.pseq}" name ="quantity2" 
 			  					value="${productVO.quantity}" size="1" 
 			  					style="background:lightgray; margin: 0 auto;" disabled>
 			  			</td>
@@ -75,9 +75,9 @@
 			    		<td>${productVO.quantity * productVO.price}</td>
 			   			<td><fmt:formatDate value="${productVO.indate}"/></td>
 			 			<td>
-			 				<input type="button" id="test2_${productVO.pseq}" value="수정" 
+			 				<input type="button" id="test2_${productVO.pseq}" value="수량수정" 
 			 						onClick="dd('${productVO.pseq}')">
-			 				<input type="button" id="test_${productVO.pseq}" value="수정완료" 
+			 				<input type="button" id="test_${productVO.pseq}" value="입력완료" 
 			 						onClick="go_update('${productVO.pseq}')" style="display:none;">
 			 			</td>
 			 			<td>
