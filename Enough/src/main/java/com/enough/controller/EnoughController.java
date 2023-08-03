@@ -76,9 +76,12 @@ public class EnoughController {
 	 // -------------------------- 상품 삭제 --------------------
 	
 	 @RequestMapping ("/deletepr")
-	 public String deletepr () {
-		 
-		 return "";
+	 public String deletepr ( 
+			 				  @RequestParam("pseq") int pseq
+			 				) {
+		 es.deletepr(pseq);
+		 // System.out.println(pseq);
+		 return "redirect:/";
 	 }
 	 
 	 // --------------------- 브랜드 추가 창으로 이동 --------------------
@@ -103,10 +106,11 @@ public class EnoughController {
 	 }
 	 // ------------------------ 브랜드 삭제 ---------------
 	 
-	 @RequestMapping ("/deletebrr")
-	 public String deletebr () {
-		 
-		 return "";
+	 @RequestMapping ("/deletebr")
+	 public String deletebr ( @RequestParam("bseq") int bseq
+			 				) {
+		 es.deletebr(bseq);
+		 return "redirect:/insertBrand";
 	 }
 	 // 배송완료 리스트 
 	 
