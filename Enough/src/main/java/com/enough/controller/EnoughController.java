@@ -33,6 +33,17 @@ public class EnoughController {
 		return mav;
 	}
 	
+	// --------------재고리스트로 이동---------------------
+	@RequestMapping("/completeList")
+	public ModelAndView completeList( HttpServletRequest request
+			) {
+		ModelAndView mav = new ModelAndView();
+		HashMap<String,Object> result = es.getproductList( request );
+		mav.addObject("productList", (List<ProductVO>)result.get("productList"));
+		mav.setViewName("completeList");
+		return mav;
+	}
+	
 	// -----------------------추가 창으로 이동 --------------
 	@RequestMapping("/insertProduct")
 	public ModelAndView insertProduct(HttpServletRequest request
@@ -68,7 +79,7 @@ public class EnoughController {
 	 public String updatepr( @RequestParam("pseq") int pseq,
 			 				 @RequestParam("quantity") int quantity
 			 ) {
-		 System.out.println("quantity:::"+quantity+"pseq:::"+pseq);
+		 
 		 es.updatepr( quantity , pseq );		 
 		 return "redirect:/";
 	 }

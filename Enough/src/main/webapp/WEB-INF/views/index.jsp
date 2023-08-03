@@ -34,13 +34,15 @@
 </head>
 <body>
 
-<div style="width:1000px; margin: 0 auto; height: 100%; background: lightgray;">
+<div style="width:1080px; margin: 0 auto; height: 100%; background: lightgray;">
 	<article>
-		<h1 style="text-align:center;">재고 리스트</h1>
+		<h1 style="text-align:center;">미송 리스트</h1>
 		<form name="frm" method="post">
 			<table>
 				<tr>
-					<td width="1000" align="right">
+					<td width="1080" align="right">
+						<input class="btn" type="button" name="btn_write" value="재고리스트로 이동" 
+							onClick="location.href='/completeList'">
 						<input class="btn" type="button" name="btn_write" value="상품 등록" 
 							onClick="location.href='insertProduct'">
 						<!-- <input type="text" name="title"> -->
@@ -49,7 +51,7 @@
 					</td>
 				</tr>
 			</table >
-			<table border="1"  cellspacing="0"   style="text-align:center" width="1000">
+			<table border="1"  cellspacing="0"   style="text-align:center" width="1080">
 				<tr>
 					<th width="60">번호</th>
 					<th width="230">상품명</th>

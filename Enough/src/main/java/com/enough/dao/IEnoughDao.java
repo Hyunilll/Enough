@@ -24,4 +24,6 @@ public interface IEnoughDao {
 	// 브랜드 삭제 
 	void deletebr(int bseq);
 	
+	
+	
 }
