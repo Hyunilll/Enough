@@ -14,8 +14,8 @@
 	</select>
 	
 	<insert id="insertpr" parameterType="com.enough.dto.ProductVO">
-		insert into productList (pseq, name, brand, quantity, price)
-			values (productList_seq.nextval, #{name}, #{brand}, #{quantity}, #{price})
+		insert into productList (pseq, name, brand, quantity1, price)
+			values (productList_seq.nextval, #{name}, #{brand}, #{quantity1}, #{price})
 	</insert>
 	
 	<update id="updatepr"  parameterType="com.enough.dto.ProductVO">

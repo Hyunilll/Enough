@@ -60,27 +60,27 @@ public class EnoughController {
 	 @RequestMapping(value = "/insertpr", method = RequestMethod.POST)
 	public String insertpr( 
 							@RequestParam("price") int price,
-							@RequestParam("quantity") int quantity,
+							@RequestParam("quantity1") int quantity1,
 							@RequestParam("name") String name,
 							@RequestParam("brand") String brand
 				) {
 		ProductVO pvo = new ProductVO();
 		pvo.setName(name);
 		pvo.setBrand(brand);
-		pvo.setQuantity(quantity);
+		pvo.setQuantity1(quantity1);
 		pvo.setPrice(price);
 
 		es.insertpr(pvo);
 		return"redirect:/";
 	}
 
-	 // --------------------------수량 수정 -------------------------
+	 // --------------------------배송완료 -------------------------
 	 @RequestMapping (value = "/updatepr", method = RequestMethod.POST)
 	 public String updatepr( @RequestParam("pseq") int pseq,
-			 				 @RequestParam("quantity") int quantity
+			 				 @RequestParam("quantity2") int quantity2
 			 ) {
 		 
-		 es.updatepr( quantity , pseq );		 
+		 es.updatepr( quantity2 , pseq );		 
 		 return "redirect:/";
 	 }
 	 
@@ -94,6 +94,10 @@ public class EnoughController {
 		 // System.out.println(pseq);
 		 return "redirect:/";
 	 }
+	 
+	 
+	 
+	 //####################브랜드#################################
 	 
 	 // --------------------- 브랜드 추가 창으로 이동 --------------------
 	 @RequestMapping ("/insertBrand")

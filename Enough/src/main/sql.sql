@@ -3,7 +3,9 @@ create table productList(
 	pseq number(5),
 	name varchar2(50),
 	brand varchar2(50),
-	quantity number(5),
+	quantity1 number(5),
+	quantity2 number(5) default 0,
+	quantity3 number(5) default 0,
 	indate date default sysdate,
 	price number(6),
 	primary key (pseq)
@@ -13,9 +15,17 @@ drop table productList;
 select * from productList;
 
 
+CREATE TABLE completeList
+(
+	name varchar2(50),
+	quantity number(5),
+	brand varchar2(50),
+	price number(6)
+);
+
 create table brandList(
 	bseq number(5),
-	title varchar2(50),
+	title varchar2(50),.
 	primary key (bseq)
 );
 

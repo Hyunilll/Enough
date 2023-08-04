@@ -15,9 +15,9 @@ function go_insertpr(){
 	}else if (document.insertpr.brand.value == "") {
 		alert('브랜드를 입력하세요.'); 	
 		document.insertpr.brand.focus();	
-	}else if (document.insertpr.quantity.value == "") {
+	}else if (document.insertpr.quantity1.value == "") {
 		alert('수량 입력하세요.'); 	
-		document.inserpr.quantity.focus();	
+		document.inserpr.quantity1.focus();	
 	}else if (document.insertpr.price.value == "") {
 		alert('가격을 입력하세요.'); 	
 		document.insertpr.price.focus();	
@@ -52,7 +52,7 @@ function go_insertpr(){
 				</tr>
 				<tr>
 					<th>수량 :</th> 
-					<td><input type="text" name="quantity" style= "width:150px;"></td>	
+					<td><input type="text" name="quantity1" style= "width:150px;"></td>	
 				</tr>
 				<tr>
 					<th>가격( ,쓰지마) :</th> 
