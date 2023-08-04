@@ -1,15 +1,20 @@
 
 create table productList(
-	pseq number(5),
-	name varchar2(50),
+	pseq number(5),  
+	name varchar2(50), 
 	brand varchar2(50),
-	quantity1 number(5),
+	quantity1 number(5),  
 	quantity2 number(5) default 0,
 	quantity3 number(5) default 0,
 	indate date default sysdate,
 	price number(6),
 	primary key (pseq)
 );
+
+// quantity1 미송수량
+// quantity2 배송수량
+// quantity3 재고수량
+
 create sequence productList_seq start with 1;
 drop table productList;
 select * from productList;
