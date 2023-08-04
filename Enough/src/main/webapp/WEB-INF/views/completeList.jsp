@@ -20,7 +20,7 @@
 		$("#quantity_" + pseq).prop("disabled",false);
 	}
 	function go_deletepr(pseq){
-		var con = confirm ("정말로 삭제 하시겠습니까?");
+		var con = confirm ("삭제시 미송리스트도(주문) 삭제 됩니다 삭제 하시겠습니까?");
 		if(con){
 			document.frm.action= "deletepr?pseq=" + pseq ;
 			document.frm.submit();
@@ -76,9 +76,9 @@
 			    		<td>${productVO.quantity3 * productVO.price}</td>
 			   			<td><fmt:formatDate value="${productVO.indate}"/></td>
 			 			<td>
-			 				<input type="button" id="test2_${productVO.pseq}" value="출고" 
+			 				<input type="button" id="test2_${productVO.pseq}" value="수량수정" 
 			 						onClick="dd('${productVO.pseq}')">
-			 				<input type="button" id="test_${productVO.pseq}" value="입력완료" 
+			 				<input type="button" id="test_${productVO.pseq}" value="수정완료" 
 			 						onClick="go_update('${productVO.pseq}')" style="display:none;">
 			 			</td>
 			 			<td>
