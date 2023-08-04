@@ -63,5 +63,9 @@ public class EnoughService {
 		
 	}
 
+	public void addpr(int quantity1, int pseq) {
+		edao.addpr(quantity1, pseq);		
+	}
+
 	
 }

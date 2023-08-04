@@ -56,7 +56,7 @@ public class EnoughController {
 	}
 	
 	
-	// ---------------------------상품 추가 ------------------
+	// ---------------------------상품 주문 ------------------
 	 @RequestMapping(value = "/insertpr", method = RequestMethod.POST)
 	public String insertpr( 
 							@RequestParam("price") int price,
@@ -73,7 +73,16 @@ public class EnoughController {
 		es.insertpr(pvo);
 		return"redirect:/";
 	}
-
+	 // ------------------------------미송 추가 ------------------------
+	 
+	 @RequestMapping(value= "/addpr", method = RequestMethod.POST)
+	 public String addpr(@RequestParam("pseq") int pseq,
+			 			 @RequestParam("quantity1") int quantity1
+			 			) {
+		 es.addpr(quantity1, pseq);
+		 return "redirect:/";
+	 }
+	 
 	 // --------------------------배송완료 -------------------------
 	 @RequestMapping (value = "/updatepr", method = RequestMethod.POST)
 	 public String updatepr( @RequestParam("pseq") int pseq,

@@ -14,12 +14,25 @@
 		document.frm.action = "updatepr?pseq=" + pseq;
 	    document.frm.submit();
 	}
+	
+	function ddd(pseq){
+		$("#test4_" + pseq).show();
+		$("#test3_" + pseq).hide();
+		//$("quantity1_"+ pseq).prop("disabled", false);
+	}
+	
+	function go_add(pseq){
+		document.frm.action = "addpr?pseq=" + pseq;
+		document.frm.submit();
+	}
+	
 	function dd(pseq){
 		$("#test_" + pseq).show();
 		$("#test2_" + pseq).hide();
 		
-		$("#quantity_" + pseq).prop("disabled",false);
+		$("#quantity2_" + pseq).prop("disabled",false);
 	}
+	
 	function go_deletepr(pseq){
 		var con = confirm ("삭제시 재고리스트도 삭제됩니다. 삭제 하시겠습니까?");
 		if(con){
@@ -63,16 +76,19 @@
 					<th  width="100">입력날짜</th>
 					<th  width="100">수정</th>
 					<th  width="60">삭제</th>
+					<th  width="60">추가</th>
 				</tr>
 		 	 	<c:forEach items="${productList}" var="productVO">
 			  		<tr height="23" align="center">
 			   			<td>${productVO.pseq}</td>
 			   			<td>${productVO.name}</td>
 			  			<td>${productVO.brand}</td>
-			  			<td>${productVO.quantity1}<input type="hidden" name="quantity1" value="${productVO.quantity1}" /></td>
-			  			
 			  			<td>
-			  				<input type="text" id="quantity_${productVO.pseq}" name ="quantity2" 
+			  				<input type="text" id="quantity1_${productVO.pseq}"name="quantity1" 
+			  					value="${productVO.quantity1}" size="1"
+			  					style="background:lightgray; margin: 0 auto;" /></td>
+			  			<td>
+			  				<input type="text" id="quantity2_${productVO.pseq}" name ="quantity2" 
 			  					value="" size="1" 
 			  					style="background:lightgray; margin: 0 auto;" disabled>
 			  			</td>
@@ -88,6 +104,12 @@
 			 			</td>
 			 			<td>
 			 				<input type="button" id="" value="삭제" onClick="go_deletepr('${productVO.pseq}')" />
+			 			</td>
+			 			<td>
+			 				<input type="button" id="test3_${productVO.pseq}" value="추가" 
+			 					onClick="ddd('${productVO.pseq}')">	
+			 				<input type="button" id="test4_${productVO.pseq}" value="추가완료" 
+			 					onClick="go_add('${productVO.pseq}')" style="display:none;">
 			 			</td>
 			    	</tr>
 			  	</c:forEach> 

@@ -13,8 +13,10 @@ public interface IEnoughDao {
 	List<ProductVO> getproductList();
 	// 추가 폼(브랜드 리스트 가져감)
 	List<BrandVO> getBrandList();
-	// 추가
+	// 상품추가
 	void insertpr(ProductVO pvo);
+	// 미송추가(추가주문)
+	void addpr(int quantity1, int pseq);
 	// 배송완료
 	void updatepr(int quantity1, int quantity2, int quantity3, int pseq);
 	// 출고완료
@@ -25,6 +27,9 @@ public interface IEnoughDao {
 	void insertbr(BrandVO bvo);
 	// 브랜드 삭제 
 	void deletebr(int bseq);
+	
+	
+	
 
 	
 	

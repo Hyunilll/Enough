@@ -25,6 +25,10 @@
 	<update id="updatecompr"  parameterType="com.enough.dto.ProductVO">
 		update productList set quantity3 = #{param1} where pseq = #{param2} 
 	</update>
+	
+	<update id="addpr"  parameterType="com.enough.dto.ProductVO">
+		update productList set quantity1 = #{param1} where pseq = #{param2} 
+	</update>
 
 	<delete id="deletepr" parameterType="com.enough.dto.ProductVO">
 		delete from productList where pseq=#{param1}

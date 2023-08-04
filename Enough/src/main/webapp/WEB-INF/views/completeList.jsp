@@ -53,6 +53,7 @@
 					<th width="60">번호</th>
 					<th width="230">상품명</th>
 					<th  width="170">브랜드</th>
+					<th  width="80">총수량</th>
 					<th  width="80">재고수량</th>
 					<!-- <th  width="80">출고수량</th> -->
 					<th  width="100">단가</th>
@@ -66,7 +67,7 @@
 			   			<td>${productVO.pseq}</td>
 			   			<td>${productVO.name}</td>
 			  			<td>${productVO.brand}</td>
-			  			<%-- <td>${productVO.quantity3}</td> --%>
+			  			<td>${productVO.quantity3 + productVO.quantity1}</td>
 			  			<td>
 			  				<input type="text" id="quantity_${productVO.pseq}" name ="quantity3" 
 			  					value="${productVO.quantity3}" size="1" 
