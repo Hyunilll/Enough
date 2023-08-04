@@ -77,11 +77,30 @@ public class EnoughController {
 	 // --------------------------배송완료 -------------------------
 	 @RequestMapping (value = "/updatepr", method = RequestMethod.POST)
 	 public String updatepr( @RequestParam("pseq") int pseq,
-			 				 @RequestParam("quantity2") int quantity2
+			 				 @RequestParam("quantity2") int quantity2,
+			 				 @RequestParam("quantity1") int quantity1,
+			 				@RequestParam("quantity3") int quantity3
 			 ) {
-		 
-		 es.updatepr( quantity2 , pseq );		 
+		 System.out.println(quantity1 + "::: quantity1");
+		 System.out.println(quantity2 + "::: quantity2");
+		 if ( quantity2 != 0) {
+			 quantity1 = quantity1 - quantity2;
+			 quantity3 = quantity3 + quantity2;
+		 }
+		 System.out.println(quantity1 + "::: 뺀 후의 quantity1");
+		 System.out.println(quantity3 + "::: 합친 후의 quantity3");
+		 es.updatepr( quantity1, quantity2 , quantity3, pseq );		 
 		 return "redirect:/";
+	 }
+	 
+	 // ------------------------- 출고완료 -------------------------------------
+	 @RequestMapping ( value="/updatecompr", method= RequestMethod.POST)
+	 public String updatecompr( @RequestParam("pseq") int pseq,
+			 					@RequestParam("quantity3") int quantity3
+			 					) {
+		 
+		 es.updatecompr( quantity3, pseq);
+		 return "redirect:/completeList";
 	 }
 	 
 	 // -------------------------- 상품 삭제 --------------------
@@ -92,7 +111,7 @@ public class EnoughController {
 			 				) {
 		 es.deletepr(pseq);
 		 // System.out.println(pseq);
-		 return "redirect:/";
+		 return "redirect:/completeList";
 	 }
 	 
 	 

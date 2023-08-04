@@ -15,15 +15,17 @@ public interface IEnoughDao {
 	List<BrandVO> getBrandList();
 	// 추가
 	void insertpr(ProductVO pvo);
-	// 수정
-	void updatepr(int quantity, int pseq);
-	// 삭제
+	// 배송완료
+	void updatepr(int quantity1, int quantity2, int quantity3, int pseq);
+	// 출고완료
+	void updatecompr(int quantity3, int pseq);
+	// 상품삭제
 	void deletepr(int pseq);
 	// 브랜드 추가 
 	void insertbr(BrandVO bvo);
 	// 브랜드 삭제 
 	void deletebr(int bseq);
-	
+
 	
 	
 }

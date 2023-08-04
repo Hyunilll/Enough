@@ -30,8 +30,8 @@ public class EnoughService {
 		
 	}
 
-	public void updatepr(int quantity, int pseq) {
-		edao.updatepr(quantity, pseq);
+	public void updatepr(int quantity1, int quantity2, int quantity3, int pseq) {
+		edao.updatepr(quantity1, quantity2, quantity3, pseq);
 		
 	}
 
@@ -56,6 +56,11 @@ public class EnoughService {
 
 	public void deletebr(int bseq) {
 		edao.deletebr(bseq);
+	}
+
+	public void updatecompr(int quantity3, int pseq) {
+		edao.updatecompr(quantity3, pseq);
+		
 	}
 
 	
