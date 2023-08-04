@@ -21,7 +21,7 @@
 		$("#quantity_" + pseq).prop("disabled",false);
 	}
 	function go_deletepr(pseq){
-		var con = confirm ("정말로 삭제 하시겠습니까?");
+		var con = confirm ("삭제시 재고리스트도 삭제됩니다. 삭제 하시겠습니까?");
 		if(con){
 			document.frm.action= "deletepr?pseq=" + pseq ;
 			document.frm.submit();
