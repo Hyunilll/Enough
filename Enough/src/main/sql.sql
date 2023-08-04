@@ -13,6 +13,14 @@ drop table productList;
 select * from productList;
 
 
+CREATE TABLE completeList
+(
+	name varchar2(50),
+	quantity number(5),
+	brand varchar2(50),
+	price number(6)
+);
+
 create table brandList(
 	bseq number(5),
 	title varchar2(50),
