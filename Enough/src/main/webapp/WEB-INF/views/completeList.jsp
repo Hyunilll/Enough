@@ -10,7 +10,7 @@
 <script src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
 	function go_update(pseq){
-		document.frm.action = "updatepr?pseq=" + pseq;
+		document.frm.action = "updatecompr?pseq=" + pseq;
 	    document.frm.submit();
 	}
 	function dd(pseq){
@@ -43,7 +43,6 @@
 							onClick="location.href='/'">
 						<input class="btn" type="button" name="btn_write" value="상품 등록" 
 							onClick="location.href='insertProduct'">
-						<!-- <input type="text" name="title"> -->
 						<input class="btn" type="button" name="btn_write" value="브랜드 등록" 
 							onClick="location.href='insertBrand'">
 					</td>
@@ -54,7 +53,8 @@
 					<th width="60">번호</th>
 					<th width="230">상품명</th>
 					<th  width="170">브랜드</th>
-					<th  width="80">수량 </th>
+					<th  width="80">재고수량</th>
+					<!-- <th  width="80">출고수량</th> -->
 					<th  width="100">단가</th>
 					<th  width="100">총가격</th>
 					<th  width="100">입력날짜</th>
@@ -66,16 +66,17 @@
 			   			<td>${productVO.pseq}</td>
 			   			<td>${productVO.name}</td>
 			  			<td>${productVO.brand}</td>
+			  			<%-- <td>${productVO.quantity3}</td> --%>
 			  			<td>
-			  				<input type="text" id="quantity_${productVO.pseq}" name ="quantity2" 
-			  					value="${productVO.quantity}" size="1" 
+			  				<input type="text" id="quantity_${productVO.pseq}" name ="quantity3" 
+			  					value="${productVO.quantity3}" size="1" 
 			  					style="background:lightgray; margin: 0 auto;" disabled>
 			  			</td>
 			   			<td>${productVO.price}</td>
-			    		<td>${productVO.quantity * productVO.price}</td>
+			    		<td>${productVO.quantity3 * productVO.price}</td>
 			   			<td><fmt:formatDate value="${productVO.indate}"/></td>
 			 			<td>
-			 				<input type="button" id="test2_${productVO.pseq}" value="수량수정" 
+			 				<input type="button" id="test2_${productVO.pseq}" value="출고" 
 			 						onClick="dd('${productVO.pseq}')">
 			 				<input type="button" id="test_${productVO.pseq}" value="입력완료" 
 			 						onClick="go_update('${productVO.pseq}')" style="display:none;">

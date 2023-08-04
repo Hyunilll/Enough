@@ -15,7 +15,15 @@ drop table productList;
 select * from productList;
 
 
-CREATE TABLE completeList
+create table brandList(
+	bseq number(5),
+	title varchar2(50),.
+	primary key (bseq)
+);
+
+
+// 필요없음
+CREATE TABLE completeList 
 (
 	name varchar2(50),
 	quantity number(5),
@@ -23,14 +31,8 @@ CREATE TABLE completeList
 	price number(6)
 );
 
-create table brandList(
-	bseq number(5),
-	title varchar2(50),.
-	primary key (bseq)
-);
 
 create sequence brandList_seq start with 1;
-
 
 insert into productList (pseq, name, brand, quantity,price)
 values (productList_seq.nextval, '베르가못 바지', '베르가못', '4', '50000');

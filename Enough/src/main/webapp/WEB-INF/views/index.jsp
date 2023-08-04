@@ -10,8 +10,7 @@
 <script src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
 	function go_update(pseq){
-		//console.log(pseq+"::::pseq,"+$("#quantity_"+pseq+"").val());
-		
+		//console.log(pseq+"::::pseq,"+$("#quantity_"+pseq+"").val()+$("#quantity1").val()+$("#quantity3").val());
 		document.frm.action = "updatepr?pseq=" + pseq;
 	    document.frm.submit();
 	}
@@ -38,6 +37,7 @@
 	<article>
 		<h1 style="text-align:center;">미송 리스트</h1>
 		<form name="frm" method="post">
+		
 			<table>
 				<tr>
 					<td width="1080" align="right">
@@ -57,6 +57,7 @@
 					<th width="230">상품명</th>
 					<th  width="170">브랜드</th>
 					<th  width="80">미송수량</th>
+					<th  width="80">완료수량</th>
 					<th  width="100">단가</th>
 					<th  width="100">총가격</th>
 					<th  width="100">입력날짜</th>
@@ -68,22 +69,25 @@
 			   			<td>${productVO.pseq}</td>
 			   			<td>${productVO.name}</td>
 			  			<td>${productVO.brand}</td>
+			  			<td>${productVO.quantity1}<input type="hidden" name="quantity1" value="${productVO.quantity1}" /></td>
+			  			
 			  			<td>
-			  				<input type="text" id="quantity_${productVO.pseq}" name ="quantity" 
-			  					value="${productVO.quantity1}" size="1" 
+			  				<input type="text" id="quantity_${productVO.pseq}" name ="quantity2" 
+			  					value="" size="1" 
 			  					style="background:lightgray; margin: 0 auto;" disabled>
 			  			</td>
 			   			<td>${productVO.price}</td>
 			    		<td>${productVO.quantity1 * productVO.price}</td>
 			   			<td><fmt:formatDate value="${productVO.indate}"/></td>
 			 			<td>
-			 				<input type="button" id="test2_${productVO.pseq}" value="수정" 
+			 				<input type="hidden" name="quantity3" value="${productVO.quantity3}" />
+			 				<input type="button" id="test2_${productVO.pseq}" value="배송완료" 
 			 						onClick="dd('${productVO.pseq}')">
-			 				<input type="button" id="test_${productVO.pseq}" value="수정완료" 
+			 				<input type="button" id="test_${productVO.pseq}" value="완료" 
 			 						onClick="go_update('${productVO.pseq}')" style="display:none;">
 			 			</td>
 			 			<td>
-			 				<input type="button" id="" value="삭제" onClick="go_deletepr('${productVO.pseq}')" />
+			 				<input type="button" id="" value="삭제" onClick="" />
 			 			</td>
 			    	</tr>
 			  	</c:forEach> 
