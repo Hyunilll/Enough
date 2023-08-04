@@ -87,7 +87,7 @@
 			 						onClick="go_update('${productVO.pseq}')" style="display:none;">
 			 			</td>
 			 			<td>
-			 				<input type="button" id="" value="삭제" onClick="" />
+			 				<input type="button" id="" value="삭제" onClick="go_deletepr('${productVO.pseq}')" />
 			 			</td>
 			    	</tr>
 			  	</c:forEach> 

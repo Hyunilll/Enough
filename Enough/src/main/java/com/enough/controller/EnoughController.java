@@ -111,7 +111,7 @@ public class EnoughController {
 			 				) {
 		 es.deletepr(pseq);
 		 // System.out.println(pseq);
-		 return "redirect:/completeList";
+		 return "redirect:/";
 	 }
 	 
 	 
