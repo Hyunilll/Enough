@@ -56,7 +56,7 @@
 					<th width="60">번호</th>
 					<th width="230">상품명</th>
 					<th  width="170">브랜드</th>
-					<th  width="80">수량 </th>
+					<th  width="80">미송수량</th>
 					<th  width="100">단가</th>
 					<th  width="100">총가격</th>
 					<th  width="100">입력날짜</th>
@@ -70,11 +70,11 @@
 			  			<td>${productVO.brand}</td>
 			  			<td>
 			  				<input type="text" id="quantity_${productVO.pseq}" name ="quantity" 
-			  					value="${productVO.quantity}" size="1" 
+			  					value="${productVO.quantity1}" size="1" 
 			  					style="background:lightgray; margin: 0 auto;" disabled>
 			  			</td>
 			   			<td>${productVO.price}</td>
-			    		<td>${productVO.quantity * productVO.price}</td>
+			    		<td>${productVO.quantity1 * productVO.price}</td>
 			   			<td><fmt:formatDate value="${productVO.indate}"/></td>
 			 			<td>
 			 				<input type="button" id="test2_${productVO.pseq}" value="수정" 
