@@ -7,26 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript">
-	function go_insertbr(){
-		if(document.insertbr.title.value==""){
-			alert('브랜드명을 입력하세요');
-			document.insertbr.title.focus();
-			return;
-		}
-		document.insertbr.action = "insertbr";
-		document.insertbr.submit();
-	}
-	
-	function go_deletebr(bseq){
-		var con = confirm("정말로 삭제 하시겠습니까?");
-		if (con) {
-			document.insertbr.action = "deletebr?bseq=" + bseq;
-			document.insertbr.submit();
-		}else return;
-	}
-	
-</script>
+<script type="text/javascript" src="/script/script.js"></script>
+
 </head>
 <body>
 <div style="width:500px; margin : 0 auto; height: 100%; background: lightgray;

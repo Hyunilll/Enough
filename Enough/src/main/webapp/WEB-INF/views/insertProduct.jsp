@@ -7,26 +7,8 @@
 <head>
 <meta charset="EUC-KR">
 <title>insertProduct</title>
-<script type="text/javascript">
-function go_insertpr(){
-	if( document.insertpr.name.value==""){ 
-		alert('이름을 입력하세요');
-		document.insertpr.name.focus();	
-	}else if (document.insertpr.brand.value == "") {
-		alert('브랜드를 입력하세요.'); 	
-		document.insertpr.brand.focus();	
-	}else if (document.insertpr.quantity1.value == "") {
-		alert('수량 입력하세요.'); 	
-		document.inserpr.quantity1.focus();	
-	}else if (document.insertpr.price.value == "") {
-		alert('가격을 입력하세요.'); 	
-		document.insertpr.price.focus();	
-	}else{
-	document.insertpr.action = "insertpr";
-	document.insertpr.submit();
-	}
-}
-</script>
+<script type="text/javascript" src="/script/script.js"></script>
+
 </head>
 <body>
 <div style="width:500px; margin : 0 auto; height: 100%; background: lightgray;
@@ -48,7 +30,6 @@ function go_insertpr(){
 							</c:forEach>
 						</select>
 					</td>
-					
 				</tr>
 				<tr>
 					<th>수량 :</th> 

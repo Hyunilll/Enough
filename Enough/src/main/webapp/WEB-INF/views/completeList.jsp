@@ -8,41 +8,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script type="text/javascript">
-	function go_update(pseq){
-		document.frm.action = "updatecompr?pseq=" + pseq;
-	    document.frm.submit();
-	}
-	function dd(pseq){
-		$("#test_" + pseq).show();
-		$("#test2_" + pseq).hide();
-		
-		$("#quantity_" + pseq).prop("disabled",false);
-	}
-	function go_deletepr(pseq){
-		var con = confirm ("삭제시 미송리스트도(주문) 삭제 됩니다 삭제 하시겠습니까?");
-		if(con){
-			document.frm.action= "deletepr?pseq=" + pseq ;
-			document.frm.submit();
-		}else return;		
-	}
-	function go_search(com){
-		 if( document.frm.key.value == "" ){
-			alert("검색어 입력이 필수입니다");
-		 	return;
-		} 
-		var url = com + "?page=1";  
-		document.frm.action = url;
-		document.frm.submit();	
-	}
-	function go_total(com ){
-		document.frm.key.value = "";
-		document.frm.action = com + "?page=1";  
-		document.frm.submit();
-	}
+<script type="text/javascript" src="/script/script.js"></script>
 
-
-</script>
 </head>
 <body>
 
@@ -53,22 +20,22 @@
 			<table>
 				<tr>
 					<td width="1000" align="right">
-						<input id="" type="search" name="key" placeholder="상품명을 입력해주세요." 
+						<input id="" type="search" class="" name="key" placeholder="상품명을 입력해주세요." 
 							value="${key}">
-                        <button type="submit" class="" value="검색" 
+                        <button type="submit" class="" name="" value="검색" 
                         	onClick="go_search('completeList')">검색</button>
-                        <button type="submit" class="" value="전체보기" 
+                        <button type="submit" class="" name="" value="전체보기" 
                         	onClick="go_total('completeList')">전체보기</button>
-						<input class="btn" type="button" name="btn_write" value="미송리스트로 이동" 
+						<input type="button" class="" name="" value="미송리스트로 이동" 
 							onClick="location.href='/?first=y'">
-						<input class="btn" type="button" name="btn_write" value="상품 등록" 
+						<input type="button" class="" name="" value="상품 등록" 
 							onClick="location.href='insertProduct'">
-						<input class="btn" type="button" name="btn_write" value="브랜드 등록" 
+						<input type="button" class="" name="" value="브랜드 등록" 
 							onClick="location.href='insertBrand'">
 					</td>
 				</tr>
 			</table >
-			<table border="1"  cellspacing="0"   style="text-align:center" width="1000">
+			<table border="1" cellspacing="0" style="text-align:center" width="1000">
 				<tr>
 					<th width="60">번호</th>
 					<th width="230">상품명</th>
