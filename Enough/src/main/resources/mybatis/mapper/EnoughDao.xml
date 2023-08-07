@@ -4,10 +4,6 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
 <mapper namespace="com.enough.dao.IEnoughDao">
-
-	<!-- <select id="getproductList" resultType="com.enough.dto.ProductVO">
-		select * from productList order by pseq desc
-	</select> -->
 	
 	<select id ="getproductList" resultType="com.enough.dto.ProductVO">
 		select * from (
@@ -23,23 +19,23 @@
 		select count(*) from ${param1} where ${param2} like '%'||#{param3}||'%'
 	</select>
 	
-	<select id="getBrandList" resultType="com.enough.dto.BrandVO">
-		select * from brandList order by bseq desc
-	</select>
-	
+	<!-- 주문(미송) -->
 	<insert id="insertpr" parameterType="com.enough.dto.ProductVO">
 		insert into productList (pseq, name, brand, quantity1, price)
 			values (productList_seq.nextval, #{name}, #{brand}, #{quantity1}, #{price})
 	</insert>
 	
+	<!-- 배송 완료( 미송 - 재고 + ) -->
 	<update id="updatepr"  parameterType="com.enough.dto.ProductVO">
 		update productList set quantity1= #{param1}, quantity2 = #{param2}, quantity3 = #{param3} where pseq = #{param4} 
 	</update>
 	
+	<!-- 출고 완료 (재고수정) -->
 	<update id="updatecompr"  parameterType="com.enough.dto.ProductVO">
 		update productList set quantity3 = #{param1} where pseq = #{param2} 
 	</update>
 	
+	<!--  미송추가  -->
 	<update id="addpr"  parameterType="com.enough.dto.ProductVO">
 		update productList set quantity1 = #{param1} where pseq = #{param2} 
 	</update>
@@ -47,6 +43,13 @@
 	<delete id="deletepr" parameterType="com.enough.dto.ProductVO">
 		delete from productList where pseq=#{param1}
 	</delete>
+	
+	
+	
+		<!-- 브랜드  -->
+	<select id="getBrandList" resultType="com.enough.dto.BrandVO">
+		select * from brandList order by bseq desc
+	</select>
 	
 	<insert id ="insertbr" parameterType="com.enough.dto.BrandVO">
 		insert into brandList (bseq, title) values (brandList_seq.nextval, #{title} )
