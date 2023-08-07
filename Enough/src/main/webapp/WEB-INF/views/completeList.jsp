@@ -40,7 +40,7 @@
 				<tr>
 					<td width="1000" align="right">
 						<input class="btn" type="button" name="btn_write" value="미송리스트로 이동" 
-							onClick="location.href='/'">
+							onClick="location.href='/?first=y'">
 						<input class="btn" type="button" name="btn_write" value="상품 등록" 
 							onClick="location.href='insertProduct'">
 						<input class="btn" type="button" name="btn_write" value="브랜드 등록" 
@@ -88,6 +88,10 @@
 			    	</tr>
 			  	</c:forEach> 
 			</table>
+			<br>
+			<jsp:include page="paging.jsp">
+				<jsp:param name="command" value="completeList" />
+			</jsp:include>
 		</form>
 	</article>
 

@@ -15,11 +15,12 @@
 	    document.frm.submit();
 	}
 	
-/* 	function ddd(pseq){
+ 	function ddd(pseq){
+ 		alert("입력");
 		$("#test4_" + pseq).show();
 		$("#test3_" + pseq).hide();
-		//$("quantity1_"+ pseq).prop("disabled", false);
-	} */
+		// $("#quantity1_"+ pseq).prop("disabled", false);
+	} 
 	
 	function go_add(pseq){
 		document.frm.action = "addpr?pseq=" + pseq;
@@ -55,7 +56,7 @@
 				<tr>
 					<td width="1080" align="right">
 						<input class="btn" type="button" name="btn_write" value="재고리스트로 이동" 
-							onClick="location.href='/completeList'">
+							onClick="location.href='/completeList?first=y'">
 						<input class="btn" type="button" name="btn_write" value="상품 등록" 
 							onClick="location.href='insertProduct'">
 						<!-- <input type="text" name="title"> -->
@@ -84,9 +85,11 @@
 			   			<td>${productVO.name}</td>
 			  			<td>${productVO.brand}</td>
 			  			<td>
+			  				<!-- <input type="hidden" id="" name="quantity1" > -->
 			  				<input type="text" id="quantity1_${productVO.pseq}"name="quantity1" 
 			  					value="${productVO.quantity1}" size="1"
-			  					style="background:lightgray; margin: 0 auto;" /></td>
+			  					style="background:lightgray; margin: 0 auto;"  />
+			  			</td>
 			  			<td>
 			  				<input type="text" id="quantity2_${productVO.pseq}" name ="quantity2" 
 			  					value="" size="1" 
@@ -114,6 +117,10 @@
 			    	</tr>
 			  	</c:forEach> 
 			</table>
+			<br>
+			<jsp:include page="paging.jsp">
+				<jsp:param name="command" value="/" />
+			</jsp:include>
 		</form>
 	</article>
 

@@ -62,7 +62,7 @@ function go_insertpr(){
 		
 			<div>
 				<input type="button" value="상품등록" onclick="go_insertpr()">
-				<input type="button" value="목록으로" onclick="location.href='/'">
+				<input type="button" value="목록으로" onclick="location.href='/?first=y'">
 			</div>
 		</form> 
 	</article>

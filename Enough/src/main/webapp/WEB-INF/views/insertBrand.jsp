@@ -44,7 +44,7 @@
 		 
 			 <div>
 			 	<input type="button" name="" value="등록" onClick="go_insertbr()">
-			 	<input type="button" value="돌아가기"onClick="location.href='/'">
+			 	<input type="button" value="돌아가기"onClick="location.href='/?first=y'">
 			 </div>
 			
 			 <div style="text-align:center;">
