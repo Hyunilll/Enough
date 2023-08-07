@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.enough.dto.BrandVO;
+import com.enough.dto.Paging;
 import com.enough.dto.ProductVO;
 import com.enough.service.EnoughService;
 
@@ -26,9 +28,17 @@ public class EnoughController {
 	@RequestMapping("/")
 	public ModelAndView main( HttpServletRequest request
 			) {
+		
 		ModelAndView mav = new ModelAndView();
+		HttpSession session = request.getSession();
+		
+		int page = 1;
+        session.setAttribute("page", page);
+        
 		HashMap<String,Object> result = es.getproductList( request );
 		mav.addObject("productList", (List<ProductVO>)result.get("productList"));
+		mav.addObject("paging", (Paging)result.get("paging") );
+		mav.addObject("key", (String)result.get("key") );
 		mav.setViewName("index");
 		return mav;
 	}
@@ -40,6 +50,8 @@ public class EnoughController {
 		ModelAndView mav = new ModelAndView();
 		HashMap<String,Object> result = es.getproductList( request );
 		mav.addObject("productList", (List<ProductVO>)result.get("productList"));
+		mav.addObject("paging", (Paging)result.get("paging") );
+		mav.addObject("key", (String)result.get("key") );
 		mav.setViewName("completeList");
 		return mav;
 	}
@@ -90,14 +102,14 @@ public class EnoughController {
 			 				 @RequestParam("quantity1") int quantity1,
 			 				@RequestParam("quantity3") int quantity3
 			 ) {
-		 System.out.println(quantity1 + "::: quantity1");
-		 System.out.println(quantity2 + "::: quantity2");
+		 // System.out.println(quantity1 + "::: quantity1");
+		 // System.out.println(quantity2 + "::: quantity2");
 		 if ( quantity2 != 0) {
-			 quantity1 = quantity1 - quantity2;
-			 quantity3 = quantity3 + quantity2;
+			 quantity1 -= quantity2;
+			 quantity3 += quantity2;
 		 }
-		 System.out.println(quantity1 + "::: 뺀 후의 quantity1");
-		 System.out.println(quantity3 + "::: 합친 후의 quantity3");
+		 // System.out.println(quantity1 + "::: 뺀 후의 quantity1");
+		 // System.out.println(quantity3 + "::: 합친 후의 quantity3");
 		 es.updatepr( quantity1, quantity2 , quantity3, pseq );		 
 		 return "redirect:/";
 	 }

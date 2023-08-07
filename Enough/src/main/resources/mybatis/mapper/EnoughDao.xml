@@ -5,8 +5,22 @@
     
 <mapper namespace="com.enough.dao.IEnoughDao">
 
-	<select id="getproductList" resultType="com.enough.dto.ProductVO">
+	<!-- <select id="getproductList" resultType="com.enough.dto.ProductVO">
 		select * from productList order by pseq desc
+	</select> -->
+	
+	<select id ="getproductList" resultType="com.enough.dto.ProductVO">
+		select * from (
+		select * from (
+			select rownum as rn, pr.*from(( select * from productList 
+			where name like '%' || #{param2} || '%' 
+			order by pseq  desc) pr)
+		) where rn &gt; = #{param1.startNum}
+		) where rn &lt; = #{param1.endNum}
+	</select>
+	
+	<select id="getAllCount" resultType="_int">
+		select count(*) from ${param1} where ${param2} like '%'||#{param3}||'%'
 	</select>
 	
 	<select id="getBrandList" resultType="com.enough.dto.BrandVO">
