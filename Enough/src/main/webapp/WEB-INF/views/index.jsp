@@ -42,6 +42,20 @@
 		}else return;
 			
 	}
+	function go_search(com){
+		 if( document.frm.key.value == "" ){
+			alert("검색어 입력이 필수입니다");
+		 	return;
+		} 
+		var url = com + "?page=1";  
+		document.frm.action = url;
+		document.frm.submit();	
+	}
+	function go_total(com ){
+		document.frm.key.value = "";
+		document.frm.action = com + "?page=1";  
+		document.frm.submit();
+	}
 
 </script>
 </head>
@@ -55,6 +69,12 @@
 			<table>
 				<tr>
 					<td width="1080" align="right">
+						<input id="" type="search" name="key" placeholder="상품명을 입력해주세요." 
+							value="${key}">
+                        <button type="submit" class="" value="검색" 
+                        	onClick="go_search('/')">검색</button>
+                        <button type="submit" class="" value="전체보기" 
+                        	onClick="go_total('/')">전체보기</button>
 						<input class="btn" type="button" name="btn_write" value="재고리스트로 이동" 
 							onClick="location.href='/completeList?first=y'">
 						<input class="btn" type="button" name="btn_write" value="상품 등록" 

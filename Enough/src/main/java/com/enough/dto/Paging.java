@@ -11,7 +11,7 @@ public class Paging {
     private int totalCount;
     private int beginPage;
     private int endPage;
-    private int displayRow =10;  
+    private int displayRow =20;  
     private int displayPage =10;  
     boolean prev;
     boolean next;
