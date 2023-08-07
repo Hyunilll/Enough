@@ -15,11 +15,11 @@
 	    document.frm.submit();
 	}
 	
-	function ddd(pseq){
+/* 	function ddd(pseq){
 		$("#test4_" + pseq).show();
 		$("#test3_" + pseq).hide();
 		//$("quantity1_"+ pseq).prop("disabled", false);
-	}
+	} */
 	
 	function go_add(pseq){
 		document.frm.action = "addpr?pseq=" + pseq;

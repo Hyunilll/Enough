@@ -90,14 +90,14 @@ public class EnoughController {
 			 				 @RequestParam("quantity1") int quantity1,
 			 				@RequestParam("quantity3") int quantity3
 			 ) {
-		 System.out.println(quantity1 + "::: quantity1");
-		 System.out.println(quantity2 + "::: quantity2");
+		 // System.out.println(quantity1 + "::: quantity1");
+		 // System.out.println(quantity2 + "::: quantity2");
 		 if ( quantity2 != 0) {
-			 quantity1 = quantity1 - quantity2;
-			 quantity3 = quantity3 + quantity2;
+			 quantity1 -= quantity2;
+			 quantity3 += quantity2;
 		 }
-		 System.out.println(quantity1 + "::: 뺀 후의 quantity1");
-		 System.out.println(quantity3 + "::: 합친 후의 quantity3");
+		 // System.out.println(quantity1 + "::: 뺀 후의 quantity1");
+		 // System.out.println(quantity3 + "::: 합친 후의 quantity3");
 		 es.updatepr( quantity1, quantity2 , quantity3, pseq );		 
 		 return "redirect:/";
 	 }
