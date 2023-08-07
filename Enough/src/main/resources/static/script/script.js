@@ -1,15 +1,16 @@
 // index.jsp
-	function go_update(pseq){
-		//console.log(pseq+"::::pseq,"+$("#quantity_"+pseq+"").val()+$("#quantity1").val()+$("#quantity3").val());
-		document.frm.action = "updatepr?pseq=" + pseq;
+	function go_update1(pseq){
+		// console.log(pseq+"::::pseq,"+$("#quantity_"+pseq+"").val()+$("#quantity1").val()+$("#quantity3").val());
+		// quantity3 = $("#quantity3_${productVO.pseq}").val();
+	 	// console.log(quantity3);
+		document.frm.action = "updatepr?pseq=" + pseq; 
 	    document.frm.submit();
 	}
 	
- 	function ddd(pseq){
- 		alert("입력");
+ 	function ddd1(pseq){
 		$("#test4_" + pseq).show();
 		$("#test3_" + pseq).hide();
-		// $("#quantity1_"+ pseq).prop("disabled", false);
+		$("#quantity1_"+ pseq).prop("disabled", false);
 	} 
 	
 	function go_add(pseq){
@@ -17,10 +18,11 @@
 		document.frm.submit();
 	}
 	
-	function dd(pseq){
+	function dd1(pseq){
 		$("#test_" + pseq).show();
 		$("#test2_" + pseq).hide();
 		
+		$("#quantity1_" + pseq).prop("disabled",false);
 		$("#quantity2_" + pseq).prop("disabled",false);
 	}
 	
@@ -32,7 +34,7 @@
 		}else return;
 			
 	}
-	function go_search(com){
+	function go_search1(com){
 		 if( document.frm.key.value == "" ){
 			alert("검색어 입력이 필수입니다");
 		 	return;
@@ -41,7 +43,7 @@
 		document.frm.action = url;
 		document.frm.submit();	
 	}
-	function go_total(com ){
+	function go_total1(com ){
 		document.frm.key.value = "";
 		document.frm.action = com + "?page=1";  
 		document.frm.submit();
@@ -59,13 +61,13 @@
 		
 		$("#quantity_" + pseq).prop("disabled",false);
 	}
-	function go_deletepr(pseq){
+/*	function go_deletepr(pseq){
 		var con = confirm ("삭제시 미송리스트도(주문) 삭제 됩니다 삭제 하시겠습니까?");
 		if(con){
 			document.frm.action= "deletepr?pseq=" + pseq ;
 			document.frm.submit();
 		}else return;		
-	}
+	}*/
 	function go_search(com){
 		 if( document.frm.key.value == "" ){
 			alert("검색어 입력이 필수입니다");

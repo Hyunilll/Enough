@@ -40,8 +40,9 @@
 					<th width="60">번호</th>
 					<th width="230">상품명</th>
 					<th  width="170">브랜드</th>
-					<th  width="80">총수량</th>
-					<th  width="80">재고수량</th>
+					<th  width="60">총수량</th>
+					<th  width="70">재고수량</th>
+					<th  width="70">미송수량</th>
 					<!-- <th  width="80">출고수량</th> -->
 					<th  width="100">단가</th>
 					<th  width="100">총가격</th>
@@ -60,6 +61,7 @@
 			  					value="${productVO.quantity3}" size="1" 
 			  					style="background:lightgray; margin: 0 auto;" disabled>
 			  			</td>
+			   			<td>${productVO.quantity1}</td>
 			   			<td>${productVO.price}</td>
 			    		<td>${productVO.quantity3 * productVO.price}</td>
 			   			<td><fmt:formatDate value="${productVO.indate}"/></td>
