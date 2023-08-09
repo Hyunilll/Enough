@@ -8,15 +8,14 @@
 <meta charset="EUC-KR">
 <title>insertProduct</title>
 <script type="text/javascript" src="/script/script.js"></script>
-
+<link  rel="stylesheet" href="/css/css.css">  
 </head>
 <body>
-<div style="width:500px; margin : 0 auto; height: 100%; background: lightgray;
-			text-align:center;">
-	<h1>insert</h1>
+<div style="width:500px; margin: 0 auto; text-align:center;">
+	<h1>Product Registration</h1>
 	<article>
 		<form name="insertpr" action="insertpr" method="post">	
-			<table style= "margin: 0 auto;">
+			<table>
 				<tr>
 					<th>상품명 :</th> 
 					<td><input type="text" name= "name" style= "width:150px;"></td>
@@ -42,8 +41,8 @@
 			</table>
 		
 			<div>
-				<input type="button" value="상품등록" onclick="go_insertpr()">
-				<input type="button" value="목록으로" onclick="location.href='/?first=y'">
+				<input type="button" class="btn btn-indigo" value="상품등록" onclick="go_insertpr()">
+				<input type="button" class="btn btn-indigo" value="목록으로" onclick="location.href='/?first=y'">
 			</div>
 		</form> 
 	</article>
