@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -98,20 +99,23 @@ public class EnoughController {
 	 // --------------------------배송완료 -------------------------
 	 @RequestMapping (value = "/updatepr", method = RequestMethod.POST)
 	 public String updatepr( @RequestParam("pseq") int pseq,
+			 				 Model model,
 			 				 @RequestParam("quantity2") int quantity2,
 			 				 @RequestParam("quantity1") int quantity1,
-			 				@RequestParam("quantity3") int quantity3
+			 				 @RequestParam("quantity3") int quantity3
 			 ) {
-		  // System.out.println(quantity1 + "::: quantity1");
-		  // System.out.println(quantity2 + "::: quantity2");
+		 String url = "redirect:/";
 		 if ( quantity2 != 0) {
-			 quantity1 = quantity1-quantity2;
-			 quantity3 = quantity3+quantity2;
+			 if( quantity1 < quantity2) {
+				 model.addAttribute("message", "완료수량이 미송수량보다 클 수 없습니다." );
+			 }else {
+				 quantity1 = quantity1-quantity2;
+				 quantity3 = quantity3+quantity2;
+			 }
 		 }
-		  // System.out.println(quantity1 + "::: 뺀 후의 quantity1");
-		  // System.out.println(quantity3 + "::: 합친 후의 quantity3");
+		  
 		 es.updatepr( quantity1, quantity2 , quantity3, pseq );		 
-		 return "redirect:/";
+		 return url;
 	 }
 	 
 	 // ------------------------- 출고완료 -------------------------------------

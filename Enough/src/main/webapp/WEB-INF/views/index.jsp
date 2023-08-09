@@ -16,8 +16,12 @@
 <div style="width:1080px; margin: 0 auto; height: 100%; background: lightgray;">
 	<article>
 		<h1 style="text-align:center;">미송 리스트</h1>
+		<h1 style="text-align:center;">  
+			<c:if test="${not empty message}">
+        		<p>${message}</p>
+    		</c:if>
+    	</h1>
 		<form name="frm" method="post">
-		
 			<table>
 				<tr>
 					<td width="1080" align="right">
@@ -96,7 +100,6 @@
 			</jsp:include>
 		</form>
 	</article>
-
 </div>
 
 <!--
