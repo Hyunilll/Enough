@@ -104,6 +104,7 @@ public class EnoughController {
 			 				 @RequestParam("quantity1") int quantity1,
 			 				 @RequestParam("quantity3") int quantity3
 			 ) {
+
 		 String url = "redirect:/";
 		 if ( quantity2 != 0) {
 			 if( quantity1 < quantity2) {
@@ -111,10 +112,10 @@ public class EnoughController {
 			 }else {
 				 quantity1 = quantity1-quantity2;
 				 quantity3 = quantity3+quantity2;
-			 }
-		 }
-		  
+			 }	
+		 }	  
 		 es.updatepr( quantity1, quantity2 , quantity3, pseq );		 
+		 
 		 return url;
 	 }
 	 
