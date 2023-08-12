@@ -107,13 +107,15 @@ public class EnoughController {
 			 ) {
 
 		 String url = "redirect:/";
+		
 		 if ( quantity2 != 0) {
 			 if( quantity1 < quantity2) {
 				 model.addAttribute("message", "완료수량이 미송수량보다 클 수 없습니다." );
+		
 			 }else {
 				 quantity1 -= quantity2;
 				 quantity3 += quantity2;
-				 quantity4 = quantity4+quantity2;
+				 quantity4 += quantity2;
 			 }	
 		 }	  
 		 es.updatepr( quantity1, quantity2 , quantity3, quantity4, pseq );		 
