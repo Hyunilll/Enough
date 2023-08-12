@@ -113,7 +113,7 @@ public class EnoughController {
 			 }else {
 				 quantity1 -= quantity2;
 				 quantity3 += quantity2;
-				 quantity4 = quantity4+quantity2;
+				 quantity4 += quantity2;
 			 }	
 		 }	  
 		 es.updatepr( quantity1, quantity2 , quantity3, quantity4, pseq );		 

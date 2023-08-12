@@ -49,7 +49,7 @@
 					<th width="230">상품명</th>
 					<th  width="150">브랜드</th>
 					<th  width="130">미송수량</th>
-					<th  width="80">재고수량</th>
+					<th  width="80">판매가능</th>
 					<th  width="100">단가</th>
 					<th  width="100">총가격</th>
 					<th  width="100">입력날짜</th>
