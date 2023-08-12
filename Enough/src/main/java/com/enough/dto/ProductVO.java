@@ -15,8 +15,16 @@ public class ProductVO {
 	private int quantity1;
 	private int quantity2;
 	private int quantity3;
+	private int quantity4;
 	private Timestamp indate;
 	private int price;
+	
+	public int getQuantity4() {
+		return quantity4;
+	}
+	public void setQuantity4(int quantity4) {
+		this.quantity4 = quantity4;
+	}
 	public int getPseq() {
 		return pseq;
 	}

@@ -102,7 +102,8 @@ public class EnoughController {
 			 				 Model model,
 			 				 @RequestParam("quantity2") int quantity2,
 			 				 @RequestParam("quantity1") int quantity1,
-			 				 @RequestParam("quantity3") int quantity3
+			 				 @RequestParam("quantity3") int quantity3,
+			 				@RequestParam("quantity4") int quantity4
 			 ) {
 
 		 String url = "redirect:/";
@@ -110,11 +111,12 @@ public class EnoughController {
 			 if( quantity1 < quantity2) {
 				 model.addAttribute("message", "완료수량이 미송수량보다 클 수 없습니다." );
 			 }else {
-				 quantity1 = quantity1-quantity2;
-				 quantity3 = quantity3+quantity2;
+				 quantity1 -= quantity2;
+				 quantity3 += quantity2;
+				 quantity4 = quantity4+quantity2;
 			 }	
 		 }	  
-		 es.updatepr( quantity1, quantity2 , quantity3, pseq );		 
+		 es.updatepr( quantity1, quantity2 , quantity3, quantity4, pseq );		 
 		 
 		 return url;
 	 }

@@ -71,8 +71,8 @@ public class EnoughService {
 		
 	}
 
-	public void updatepr(int quantity1, int quantity2, int quantity3, int pseq) {
-		edao.updatepr(quantity1, quantity2, quantity3, pseq);
+	public void updatepr(int quantity1, int quantity2, int quantity3, int quantity4, int pseq) {
+		edao.updatepr(quantity1, quantity2, quantity3, quantity4, pseq);
 		
 	}
 

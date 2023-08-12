@@ -27,7 +27,8 @@
 	
 	<!-- 배송 완료( 미송 - 재고 + ) -->
 	<update id="updatepr"  parameterType="com.enough.dto.ProductVO">
-		update productList set quantity1= #{param1}, quantity2 = #{param2}, quantity3 = #{param3} where pseq = #{param4} 
+		update productList set quantity1= #{param1}, quantity2 = #{param2}, 
+		quantity3 = #{param3}, quantity4 = #{param4} where pseq = #{param5} 
 	</update>
 	
 	<!-- 출고 완료 (재고수정) -->

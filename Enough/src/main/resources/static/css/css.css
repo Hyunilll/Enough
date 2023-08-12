@@ -9,7 +9,7 @@ table {
 }
 th, td {
     border-bottom: 1px solid #444444;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
 }
 th:nth-child(2n), td:nth-child(2n) {
@@ -28,8 +28,9 @@ th:nth-child(2n+1), td:nth-child(2n+1) {
     font-family: "paybooc-Light", sans-serif;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 300;
     transition: 0.25s;
+    font-size: 80%;
 }
 
 .btn-indigo {

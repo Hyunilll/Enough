@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<div style="width:1150px; margin: 0 auto; height: 100%;">
+<div style="width:1200px; margin: 0 auto; height: 100%;">
 	<article>
 		<form name="frm" method="post">
 			<table>
@@ -47,7 +47,7 @@
 				<tr>
 					<th width="60">번호</th>
 					<th width="230">상품명</th>
-					<th  width="170">브랜드</th>
+					<th  width="150">브랜드</th>
 					<th  width="130">미송수량</th>
 					<th  width="80">재고수량</th>
 					<th  width="100">단가</th>
@@ -56,7 +56,7 @@
 					<!-- <th  width="70">완료수량</th> -->
 					<th  width="170">배송완료</th>
 					<th  width="60">삭제</th>
-					<!-- <th  width="60">추가</th> -->
+					<th  width="60">총수량</th>
 				</tr>
 		 	 	<c:forEach items="${productList}" var="productVO">
 			  		<tr height="23" align="center">
@@ -91,6 +91,11 @@
 			 			</td>
 			 			<td>
 			 				<input type="button" id="" value="삭제" onClick="go_deletepr('${productVO.pseq}')" />
+			 			</td>
+			 			<td>
+			 				<input type="text" id="quantity4_${productVO.pseq}" name ="quantity4" 
+			  					value="${productVO.quantity4}" size="1" 
+			  					style="background:lightgray; margin: 0 auto;" disabled>
 			 			</td>
 			    	</tr>
 			  	</c:forEach> 

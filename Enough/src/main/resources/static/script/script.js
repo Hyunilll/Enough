@@ -25,6 +25,7 @@
 		$("#quantity1_" + pseq).prop("disabled",false);
 		$("#quantity2_" + pseq).prop("disabled",false);
 		$("#quantity3_" + pseq).prop("disabled",false);
+		$("#quantity4_" + pseq).prop("disabled",false);
 	}
 	
 	function go_deletepr(pseq){

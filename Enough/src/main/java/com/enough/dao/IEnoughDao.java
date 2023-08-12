@@ -19,7 +19,7 @@ public interface IEnoughDao {
 	// 미송추가(추가주문)
 	void addpr(int quantity1, int pseq);
 	// 배송완료
-	void updatepr(int quantity1, int quantity2, int quantity3, int pseq);
+	void updatepr(int quantity1, int quantity2, int quantity3, int quantity4,int pseq);
 	// 출고완료
 	void updatecompr(int quantity3, int pseq);
 	// 상품삭제
