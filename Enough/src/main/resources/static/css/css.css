@@ -17,6 +17,9 @@ th, td {
 th:nth-child(4), td:nth-child(4) {
     background-color: lightgray;
 }
+th:nth-child(5), td:nth-child(5) {
+    background-color: lightgray;
+}
 
 /* th:nth-child(2n+1), td:nth-child(2n+1) {
     background-color: #C0E0F0;
