@@ -20,7 +20,7 @@
 				<tr>
 					<td>
 						<h1>Product List</h1>
-						<h1>${message}</h1>
+						<h1> <%= request.getAttribute("message") %>:::${message}</h1>
 					</td>
 				</tr>
 			
