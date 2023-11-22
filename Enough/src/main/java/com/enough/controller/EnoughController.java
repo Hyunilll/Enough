@@ -19,6 +19,8 @@ import com.enough.dto.Paging;
 import com.enough.dto.ProductVO;
 import com.enough.service.EnoughService;
 
+import ch.qos.logback.core.recovery.ResilientSyslogOutputStream;
+
 @Controller
 public class EnoughController {
 
@@ -110,6 +112,7 @@ public class EnoughController {
 		
 		 if ( quantity2 != 0) {
 			 if( quantity1 < quantity2) {
+				 
 				 model.addAttribute("message", "완료수량이 미송수량보다 클 수 없습니다." );
 		
 			 }else {

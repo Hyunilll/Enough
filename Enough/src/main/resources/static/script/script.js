@@ -3,6 +3,10 @@
 		// console.log(pseq+"::::pseq,"+$("#quantity_"+pseq+"").val()+$("#quantity1").val()+$("#quantity3").val());
 		// quantity3 = $("#quantity3_${productVO.pseq}").val();
 	 	// console.log(quantity3);
+	 	/*if(quantity1 < quantity2){
+			 alert("완료수량이 미송수량보다 클 수 없습니다.");
+			 return false;
+		 }*/
 		document.frm.action = "updatepr?pseq=" + pseq; 
 	    document.frm.submit();
 	}

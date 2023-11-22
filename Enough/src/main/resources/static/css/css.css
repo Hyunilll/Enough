@@ -11,13 +11,19 @@ th, td {
     border-bottom: 1px solid #444444;
     padding: 5px;
     text-align: center;
+    background-color: #C0E0F0;
 }
-th:nth-child(2n), td:nth-child(2n) {
-    background-color: #bbdefb;
+
+th:nth-child(4), td:nth-child(4) {
+    background-color: lightgray;
 }
-th:nth-child(2n+1), td:nth-child(2n+1) {
-    background-color: #e3f2fd;
+th:nth-child(5), td:nth-child(5) {
+    background-color: lightgray;
 }
+
+/* th:nth-child(2n+1), td:nth-child(2n+1) {
+    background-color: #C0E0F0;
+}  */
 
 .btn {
     position: relative;
