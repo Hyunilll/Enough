@@ -17,3 +17,6 @@ CREATE TABLE Inventory(
 	oseq number(5) not null,
 	foreign key (oseq)
 );
+
+// 주문내역은 유지하되, 수량은 빼는 방법 모색..
+CREATE TABLE 
